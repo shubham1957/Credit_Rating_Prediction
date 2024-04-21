@@ -9,7 +9,7 @@ class CreditForm(FlaskForm):
     History = SelectField('History', choices=[('critical', 'critical'), ('duly-till-now', 'duly-till-now'), ('all-paid-duly', 'all-paid-duly'), ('bank-paid-duly', 'bank-paid-duly'), ('delay', 'delay')], validators=[DataRequired()])
     Purpose_of_credit = SelectField('Purpose of Credit', choices=[('radio-tv', 'radio-tv'), ('education', 'education'), ('furniture', 'furniture'), ('new-car', 'new-car'), ('used-car', 'used-car'), ('domestic-app', 'domestic-app'), ('repairs', 'repairs'), ('business', 'business')], validators=[DataRequired()])
     Credit_Amount = IntegerField('Credit Amount', validators=[DataRequired()])
-    Balance_in_Savings_A_C = SelectField('Balance in Savings A/C', choices=[('unknown', 'unknown'), ('less100DM', 'less100DM'), ('less1000DM', 'less1000DM'), ('over1000DM', 'over1000DM')], validators=[DataRequired()])
+    Balance_in_Savings_A_C = SelectField('Balance in Savings A/C', choices=[('unknown', 'unknown'), ('less100DM', 'less100DM'), ('less500DM', 'less500DM'),('less1000DM', 'less1000DM'), ('over1000DM', 'over1000DM')], validators=[DataRequired()])
     Employment = SelectField('Employment', choices=[('over-seven', 'over-seven'), ('four-years', 'four-years'), ('seven-years', 'seven-years'), ('unemployed', 'unemployed'), ('one-year', 'one-year'), ('bank-paid-duly', 'bank-paid-duly')], validators=[DataRequired()])
     Install_rate = IntegerField('Install rate', validators=[DataRequired()])
     Marital_status = SelectField('Marital status', choices=[('single-male', 'single-male'), ('female-divorced', 'female-divorced'), ('male-divorced', 'male-divorced'), ('married-male', 'married-male')], validators=[DataRequired()])

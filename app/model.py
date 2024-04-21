@@ -2,7 +2,7 @@
 import joblib
 
 # Load the trained model
-def load_model(model_path="trained_model.pkl"):
+def load_model(model_path="trained_model_rf.pkl"): # Update the model path to the one saved with Random Forest
     return joblib.load(model_path)
 
 # Function to predict credit classification

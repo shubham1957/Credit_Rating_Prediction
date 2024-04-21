@@ -5,6 +5,7 @@ from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
 import joblib
 
 # Load the dataset
@@ -63,3 +64,12 @@ joblib.dump(best_estimator, "trained_model_rf_best.pkl")
 
 # Print the best hyperparameters
 print("Best Hyperparameters:", best_params)
+
+# Predict the target variable on the test set using the best estimator
+y_pred = best_estimator.predict(X_test)
+
+# Calculate accuracy
+accuracy = accuracy_score(y_test, y_pred)
+
+# Print the accuracy
+print("Accuracy:", accuracy)

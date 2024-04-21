@@ -7,196 +7,286 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Credit Rating Prediction</h1>
-    <form method="POST" action="/">
-        {{ form.hidden_tag() }}
+    <div class="container">
+        <h1>Credit Rating Prediction</h1>
+        <div class="form-box">
+            <form method="POST" action="/">
+                {{ form.hidden_tag() }}
 
-        <!-- Checking Account -->
-        <div class="form-group">
-            <label for="CHK_ACCT">Checking Account</label>
-            <select id="CHK_ACCT" name="CHK_ACCT" class="form-control">
-                <option value="0DM">0DM</option>
-                <option value="less-200DM">less-200DM</option>
-                <option value="no-account">no-account</option>
-                <option value="over-200DM">over-200DM</option>
-            </select>
+                <table>
+                    <!-- Checking Account -->
+                    <tr>
+                        <td>
+                            <label for="CHK_ACCT">Checking Account</label>
+                        </td>
+                        <td>
+                            <select id="CHK_ACCT" name="CHK_ACCT" class="form-control">
+                                <option value="0DM">0DM</option>
+                                <option value="less-200DM">less-200DM</option>
+                                <option value="no-account">no-account</option>
+                                <option value="over-200DM">over-200DM</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Duration -->
+                    <tr>
+                        <td>
+                            <label for="Duration">Duration</label>
+                        </td>
+                        <td>
+                            <input type="number" id="Duration" name="Duration" class="form-control" required>
+                        </td>
+                    </tr>
+
+                    <!-- History -->
+                    <tr>
+                        <td>
+                            <label for="History">History</label>
+                        </td>
+                        <td>
+                            <select id="History" name="History" class="form-control">
+                                <option value="critical">critical</option>
+                                <option value="duly-till-now">duly-till-now</option>
+                                <option value="all-paid-duly">all-paid-duly</option>
+                                <option value="bank-paid-duly">bank-paid-duly</option>
+                                <option value="delay">delay</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Purpose of Credit -->
+                    <tr>
+                        <td>
+                            <label for="Purpose_of_credit">Purpose of Credit</label>
+                        </td>
+                        <td>
+                            <select id="Purpose_of_credit" name="Purpose_of_credit" class="form-control">
+                                <option value="radio-tv">radio-tv</option>
+                                <option value="education">education</option>
+                                <option value="furniture">furniture</option>
+                                <option value="new-car">new-car</option>
+                                <option value="used-car">used-car</option>
+                                <option value="domestic-app">domestic-app</option>
+                                <option value="repairs">repairs</option>
+                                <option value="business">business</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Credit Amount -->
+                    <tr>
+                        <td>
+                            <label for="Credit_Amount">Credit Amount</label>
+                        </td>
+                        <td>
+                            <input type="number" id="Credit_Amount" name="Credit_Amount" class="form-control" required>
+                        </td>
+                    </tr>
+
+                    <!-- Balance in Savings A/C -->
+                    <tr>
+                        <td>
+                            <label for="Balance_in_Savings_A_C">Balance in Savings A/C</label>
+                        </td>
+                        <td>
+                            <select id="Balance_in_Savings_A_C" name="Balance_in_Savings_A_C" class="form-control">
+                                <option value="unknown">unknown</option>
+                                <option value="less100DM">less100DM</option>
+                                <option value="less1000DM">less1000DM</option>
+                                <option value="over1000DM">over1000DM</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Employment -->
+                    <tr>
+                        <td>
+                            <label for="Employment">Employment</label>
+                        </td>
+                        <td>
+                            <select id="Employment" name="Employment" class="form-control">
+                                <option value="over-seven">over-seven</option>
+                                <option value="four-years">four-years</option>
+                                <option value="seven-years">seven-years</option>
+                                <option value="unemployed">unemployed</option>
+                                <option value="one-year">one-year</option>
+                                <option value="bank-paid-duly">bank-paid-duly</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Install rate -->
+                    <tr>
+                        <td>
+                            <label for="Install_rate">Install rate</label>
+                        </td>
+                        <td>
+                            <input type="number" id="Install_rate" name="Install_rate" class="form-control" required>
+                        </td>
+                    </tr>
+
+                    <!-- Marital status -->
+                    <tr>
+                        <td>
+                            <label for="Marital_status">Marital status</label>
+                        </td>
+                        <td>
+                            <select id="Marital_status" name="Marital_status" class="form-control">
+                                <option value="single-male">single-male</option>
+                                <option value="female-divorced">female-divorced</option>
+                                <option value="male-divorced">male-divorced</option>
+                                <option value="married-male">married-male</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Co-applicant -->
+                    <tr>
+                        <td>
+                            <label for="Co_applicant">Co-applicant</label>
+                        </td>
+                        <td>
+                            <select id="Co_applicant" name="Co_applicant" class="form-control">
+                                <option value="none">none</option>
+                                <option value="guarantor">guarantor</option>
+                                <option value="co-applicant">co-applicant</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Present Resident -->
+                    <tr>
+                        <td>
+                            <label for="Present_Resident">Present Resident</label>
+                        </td>
+                        <td>
+                            <input type="number" id="Present_Resident" name="Present_Resident" class="form-control" required>
+                        </td>
+                    </tr>
+
+                    <!-- Real Estate -->
+                    <tr>
+                        <td>
+                            <label for="Real_Estate">Real Estate</label>
+                        </td>
+                        <td>
+                            <select id="Real_Estate" name="Real_Estate" class="form-control">
+                                <option value="real-estate">real-estate</option>
+                                <option value="building-society">building-society</option>
+                                <option value="car">car</option>
+                                <option value="none">none</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Age -->
+                    <tr>
+                        <td>
+                            <label for="Age">Age</label>
+                        </td>
+                        <td>
+                            <input type="number" id="Age" name="Age" class="form-control" required>
+                        </td>
+                    </tr>
+
+                    <!-- Other installment -->
+                    <tr>
+                        <td>
+                            <label for="Other_installment">Other installment</label>
+                        </td>
+                        <td>
+                            <select id="Other_installment" name="Other_installment" class="form-control">
+                                <option value="none">none</option>
+                                <option value="bank">bank</option>
+                                <option value="stores">stores</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Residence -->
+                    <tr>
+                        <td>
+                            <label for="Residence">Residence</label>
+                        </td>
+                        <td>
+                            <select id="Residence" name="Residence" class="form-control">
+                                <option value="own">own</option>
+                                <option value="rent">rent</option>
+                                <option value="free">free</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Num_Credits -->
+                    <tr>
+                        <td>
+                            <label for="Num_Credits">Number of Credits</label>
+                        </td>
+                        <td>
+                            <input type="number" id="Num_Credits" name="Num_Credits" class="form-control" required>
+                        </td>
+                    </tr>
+
+                    <!-- Job -->
+                    <tr>
+                        <td>
+                            <label for="Job">Job</label>
+                        </td>
+                        <td>
+                            <select id="Job" name="Job" class="form-control">
+                                <option value="skilled">skilled</option>
+                                <option value="unskilled-resident">unskilled-resident</option>
+                                <option value="management">management</option>
+                                <option value="unemployed-non-resident">unemployed-non-resident</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Number of Dependents -->
+                    <tr>
+                        <td>
+                            <label for="No_dependents">Number of Dependents</label>
+                        </td>
+                        <td>
+                            <input type="number" id="No_dependents" name="No_dependents" class="form-control" required>
+                        </td>
+                    </tr>
+
+                    <!-- Phone -->
+                    <tr>
+                        <td>
+                            <label for="Phone">Phone</label>
+                        </td>
+                        <td>
+                            <select id="Phone" name="Phone" class="form-control">
+                                <option value="no">no</option>
+                                <option value="yes">yes</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Foreign -->
+                    <tr>
+                        <td>
+                            <label for="Foreign">Foreign</label>
+                        </td>
+                        <td>
+                            <select id="Foreign" name="Foreign" class="form-control">
+                                <option value="no">no</option>
+                                <option value="yes">yes</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="button">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+                
+            </form>
         </div>
-
-        <!-- Duration -->
-        <div class="form-group">
-            <label for="Duration">Duration</label>
-            <input type="number" id="Duration" name="Duration" class="form-control" required>
-        </div>
-
-        <!-- History -->
-        <div class="form-group">
-            <label for="History">History</label>
-            <select id="History" name="History" class="form-control">
-                <option value="critical">critical</option>
-                <option value="duly-till-now">duly-till-now</option>
-                <option value="all-paid-duly">all-paid-duly</option>
-                <option value="bank-paid-duly">bank-paid-duly</option>
-                <option value="delay">delay</option>
-            </select>
-        </div>
-
-        <!-- Purpose of Credit -->
-        <div class="form-group">
-            <label for="Purpose_of_credit">Purpose of Credit</label>
-            <select id="Purpose_of_credit" name="Purpose_of_credit" class="form-control">
-                <option value="radio-tv">radio-tv</option>
-                <option value="education">education</option>
-                <option value="furniture">furniture</option>
-                <option value="new-car">new-car</option>
-                <option value="used-car">used-car</option>
-                <option value="domestic-app">domestic-app</option>
-                <option value="repairs">repairs</option>
-                <option value="business">business</option>
-            </select>
-        </div>
-
-        <!-- Credit Amount -->
-        <div class="form-group">
-            <label for="Credit_Amount">Credit Amount</label>
-            <input type="number" id="Credit_Amount" name="Credit_Amount" class="form-control" required>
-        </div>
-
-        <!-- Balance in Savings A/C -->
-        <div class="form-group">
-            <label for="Balance_in_Savings_A_C">Balance in Savings A/C</label>
-            <select id="Balance_in_Savings_A_C" name="Balance_in_Savings_A_C" class="form-control">
-                <option value="unknown">unknown</option>
-                <option value="less100DM">less100DM</option>
-                <option value="less1000DM">less1000DM</option>
-                <option value="over1000DM">over1000DM</option>
-            </select>
-        </div>
-
-        <!-- Employment -->
-        <div class="form-group">
-            <label for="Employment">Employment</label>
-            <select id="Employment" name="Employment" class="form-control">
-                <option value="over-seven">over-seven</option>
-                <option value="four-years">four-years</option>
-                <option value="seven-years">seven-years</option>
-                <option value="unemployed">unemployed</option>
-                <option value="one-year">one-year</option>
-                <option value="bank-paid-duly">bank-paid-duly</option>
-            </select>
-        </div>
-
-        <!-- Install rate -->
-        <div class="form-group">
-            <label for="Install_rate">Install rate</label>
-            <input type="number" id="Install_rate" name="Install_rate" class="form-control" required>
-        </div>
-
-        <!-- Marital status -->
-        <div class="form-group">
-            <label for="Marital_status">Marital status</label>
-            <select id="Marital_status" name="Marital_status" class="form-control">
-                <option value="single-male">single-male</option>
-                <option value="female-divorced">female-divorced</option>
-                <option value="male-divorced">male-divorced</option>
-                <option value="married-male">married-male</option>
-            </select>
-        </div>
-
-        <!-- Co-applicant -->
-        <div class="form-group">
-            <label for="Co_applicant">Co-applicant</label>
-            <select id="Co_applicant" name="Co_applicant" class="form-control">
-                <option value="none">none</option>
-                <option value="guarantor">guarantor</option>
-                <option value="co-applicant">co-applicant</option>
-            </select>
-        </div>
-
-        <!-- Present Resident -->
-        <div class="form-group">
-            <label for="Present_Resident">Present Resident</label>
-            <input type="number" id="Present_Resident" name="Present_Resident" class="form-control" required>
-        </div>
-
-        <!-- Real Estate -->
-        <div class="form-group">
-            <label for="Real_Estate">Real Estate</label>
-            <select id="Real_Estate" name="Real_Estate" class="form-control">
-                <option value="real-estate">real-estate</option>
-                <option value="building-society">building-society</option>
-                <option value="car">car</option>
-                <option value="none">none</option>
-            </select>
-        </div>
-
-        <!-- Age -->
-        <div class="form-group">
-            <label for="Age">Age</label>
-            <input type="number" id="Age" name="Age" class="form-control" required>
-        </div>
-
-        <!-- Other installment -->
-        <div class="form-group">
-            <label for="Other_installment">Other installment</label>
-            <select id="Other_installment" name="Other_installment" class="form-control">
-                <option value="none">none</option>
-                <option value="bank">bank</option>
-                <option value="stores">stores</option>
-            </select>
-        </div>
-
-        <!-- Residence -->
-        <div class="form-group">
-            <label for="Residence">Residence</label>
-            <select id="Residence" name="Residence" class="form-control">
-                <option value="own">own</option>
-                <option value="rent">rent</option>
-                <option value="free">free</option>
-            </select>
-        </div>
-
-        <!-- Num_Credits -->
-        <div class="form-group">
-            <label for="Num_Credits">Number of Credits</label>
-            <input type="number" id="Num_Credits" name="Num_Credits" class="form-control" required>
-        </div>
-
-        <!-- Job -->
-        <div class="form-group">
-            <label for="Job">Job</label>
-            <select id="Job" name="Job" class="form-control">
-                <option value="skilled">skilled</option>
-                <option value="unskilled-resident">unskilled-resident</option>
-                <option value="management">management</option>
-                <option value="unemployed-non-resident">unemployed-non-resident</option>
-            </select>
-        </div>
-
-        <!-- Number of Dependents -->
-        <div class="form-group">
-            <label for="No_dependents">Number of Dependents</label>
-            <input type="number" id="No_dependents" name="No_dependents" class="form-control" required>
-        </div>
-
-        <!-- Phone -->
-        <div class="form-group">
-            <label for="Phone">Phone</label>
-            <select id="Phone" name="Phone" class="form-control">
-                <option value="no">no</option>
-                <option value="yes">yes</option>
-            </select>
-        </div>
-
-        <!-- Foreign -->
-        <div class="form-group">
-            <label for="Foreign">Foreign</label>
-            <select id="Foreign" name="Foreign" class="form-control">
-                <option value="no">no</option>
-                <option value="yes">yes</option>
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </div>
 </body>
 </html>

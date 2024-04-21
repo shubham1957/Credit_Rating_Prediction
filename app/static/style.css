@@ -1,38 +1,92 @@
-/* Add your CSS styles here */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url(./bg1.png);
+    background-attachment: fixed;
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+    background-color: black;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
 }
 
 h1 {
     text-align: center;
+    color: #000000;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.form-box {
+    background-color: rgba(0, 0, 0, 0.4); /* White color with 80% opacity */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
 }
 
-.form-control {
+table {
+    width: 100%;
+}
+
+td {
+    padding: 10px 0;
+}
+
+label {
+    font-size: 18px;
+    color: #555;
+}
+
+input[type='number'],
+input[type='text']{
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 30px; /* Border radius for all input elements */
+    background-color: #f9f9f9;
+}
+
+select {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
+    border-radius: 30px; /* Border radius for all input elements */
+    background-color: #f9f9f9;
+    padding-right: 30px; /* Adjusted padding for select element */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23555" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M7 10l5 5 5-5z"/></svg>'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position the arrow */
+    -webkit-appearance: none; /* Remove default arrow in Chrome/Safari */
+    -moz-appearance: none; /* Remove default arrow in Firefox */
+    appearance: none; /* Remove default arrow in other browsers */
 }
 
-.btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
+select::-ms-expand {
+    display: none; /* Hide default arrow in IE/Edge */
+}
+
+.button {
+    text-align: center; /* Center the content horizontally */
+    margin-top: 20px; /* Add some space between the form fields and the button */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+}
+
+.button button {
+    padding: 15px 30px; /* Adjust padding */
+    font-size: 18px;
+    border-radius: 25px;
     background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.button button:hover {
     background-color: #0056b3;
 }
+
